@@ -4,13 +4,15 @@ Want to be a fullstack webdeveloper? here,have a way to do so!
 
 
 #      GIT
-```
+`
 git clone
 git add <file name>
 git commit -a -m "message"
 git status
 git push
-//merge conflicts
+`
+##	merge conflicts
+`
 git log
 git reset --hard <commit>
 git reset --hard origin/master
@@ -21,10 +23,12 @@ git checkout <branch name> -b(for new)
 	merging the subbreanches
 	git merge <branch name>
 git push --set-upstream origin feature
-//remotes
+`
+##	remotes
+`
 git fetch
 git merge
-```
+`
 
 #     HTML 5
 audio
@@ -34,7 +38,7 @@ specificity:
 	inline>id>class>type
 
 #  		CSS
-```
+`
 : //means properties
 a, b //multiple elements selector
 a b //descendant selector
@@ -45,17 +49,19 @@ a:b //pseudoclass selector
 a:: b // pseudoelement selector
 a{[href=""]//atribute selector
 }
-```
+`
 
-	properties
-```
+##	properties
+`
 before
 after
 display: flex;
 flex-wrap : wrap;
 
 @media
-	animation
+`
+##	animation
+`
 @keyframes <name of the animation>{
 	//you can use two ways
 	//1
@@ -72,27 +78,30 @@ animation-duration: 2s;
 animation-fill-mode: forwards;
 animation-itiration-count:infinite;
 }
-```
+`
 
 # 		SASS
-```
+`
 sass <file>.scss: <file>.css
 sass --watch <file>.scss: <file>.css
-
+`
 #   	FLASK
+`
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
 flights=db.execute(<query>)//INSERT querry
 db.commit()
-
-//with sqlalchemy
+`
+##with sqlalchemy
+`
 db.createa_all()
 flight = FLIGHT(variables)//rather than querry
 db.session.add(flight)
 db.session.commmit()
-
-		python(ORM)object relation mapping
+`
+##	python(ORM)object relation mapping
+`
 flight = Flight(origin="",destination="". duration=)
 db.session.add(flight)
 
@@ -108,30 +117,30 @@ db.session.delete()
 .filter(and_()) and .filter(or_())
  or
 //
-```
+`
 #     API's
-```
-//using json javascript object notation
-//http method
-GET
-POST
-PUT
-PATCH
-DELETE
-//api's status code
-200 //ok
-201//Created
-301//moved permanently
-400//bad request
-403//forbidden -> CSRF: Cross site request forgery
-404//notfound
-405//method not allowed
-422//unprogresable Etenty
-500//internal server error
-```
+##using json javascript object notation
+##http method
+*GET
+*POST
+*PUT
+*PATCH
+*DELETE
+##	api's status code
+*200 //ok
+*201//Created
+*301//moved permanently
+*400//bad request
+*403//forbidden -> CSRF: Cross site request forgery
+*404//notfound
+*405//method not allowed
+*422//unprogresable Etenty
+*500//internal server error
+
 # 		JavaScript
-```
-//some events:
+
+##	some events:
+``
 onclick
 onmouseover
 onkeydown
@@ -177,24 +186,24 @@ javaScript local storage logic:
 javascript local storage:
 localStorage.getItem('counter')
 localStorage.setItem('counter',0)
-
-	window property
+``
+#	window property
 window.innerHeight, window.innerLength, window.scrollY, window.
-
+`
 window.onscrool = ()=>{
 if( window.innerHeight + window.scrollY >= document.body.offsetHeight){
 	load();
 }
 }
-```
+`
 
 # 		React, ReactDOM, Babel,jsx
-```
-src:
+
+##src:
 <script type="text/babel"></script>
 
-define:
-
+##define:
+`
 <body>
 
 <script>
@@ -217,9 +226,11 @@ class <app name> extends React.Component{
 
 ReactDom.render(<app name/>, document.querySelector('#app'));
 </script>
-a more complex example in the projects
-		AJAX
-//for asrinconous request
+`
+##	a more complex example in the projects
+#		AJAX
+##	for asrinconous request
+`
 fetch('url')
 .then(response=>{return response.json()})
 .then(data=>{
@@ -228,11 +239,11 @@ console.log(data);
 .catch(error=>
 {do something};
 );
-```
+`
 #      Socket.IO
 
 #       Django
-```
+`
 //to use the name for url
 {% url 'add' %}
 CSRF token: {% csrf_takon%}
@@ -247,41 +258,41 @@ in html add a variable {{form}}
 sessions
 >>checking session request.session ==
 >>making a variable task = request.session["tasks"]
-```
+`
 
 
 #     SQL(post and mysql)
-```
-sql types:
-TEXT
-NUMERIC
-INTEGER
-REAL
-BLOB
-sam:
-.modes, .heades
-fun:
-AVERAGE COUNT MIN MAX SUM
-clause:
-LIMIT
-ORDER BY
-GROUP BY
-HAVING
-mysql Types:
-CHAR(size)
-VARCHAR(size)
-SMALLINT
-INT
-BRGINT
-FLOAT
-DOUBLE
 
-constraints-
-CHECK
-UNIQUE
-PRIMARY KEY
-NOT NULL
-```
+##sql types:
+*TEXT
+*NUMERIC
+*INTEGER
+*REAL
+*BLOB
+##sam:
+*.modes, .heades
+##fun:
+*AVERAGE COUNT MIN MAX SUM
+##clause:
+*LIMIT
+*ORDER BY
+*GROUP BY
+*HAVING
+##mysql Types:
+*CHAR(size)
+*VARCHAR(size)
+*SMALLINT
+*INT
+*BRGINT
+*FLOAT
+*DOUBLE
+
+##constraints-
+*CHECK
+*UNIQUE
+*PRIMARY KEY
+*NOT NULL
+
 
 ##  django sql
 `
@@ -290,42 +301,51 @@ models.objects.filters().filters()
 `
 
 ##  	Testing
+
+##	assert //ignore the correct line and give error if there is any
 `
-	assert //ignore the correct line and give error if there is any
 //ex: assert square(10) = 100
 // other assert command
-	unittest //testing the values
+`
+##	unittest //testing the values
+`
 //ex: import unittest
 //class Tests(unittest.TestCase):
 //	def test_28(self):
 //		self.assertFalse(is_prime(28))
 //if __name__ == "__main__":
 //unittest.main()
-
-//unittest methods
-assertTrue()
-assertFalse()
-assertEqual()
-assertNotEqual()
-assertIn()
-assertNotIn()
 `
+##unittest methods
+
+*assertTrue()
+*assertFalse()
+*assertEqual()
+*assertNotEqual()
+*assertIn()
+*assertNotIn()
+
 ##  selenium
 `
 from tests import *
 uri = file_uri("conter.html")
 driver.get(uri)
-
-//cmd
+`
+##cmd
+`
 python3 manage.py test
+`
 
-		CI/CD(git hub actions(YAML))//use inside .github
-		// continuous Integration 
-		//	frequent merges to main branch
-		//	automated unit testing
-		//continous Delivery
-		//	short release schedules
-	yaml(ylm)//a language to virtualy make a application
+##		CI/CD(git hub actions(YAML))//use inside .github
+
+		 continuous Integration 
+			frequent merges to main branch
+			automated unit testing
+		continous Delivery
+			short release schedules
+
+##	yaml(ylm)//a language to virtualy make a application
+`
 	ci.yml
 	
 	name: Testing
@@ -341,25 +361,27 @@ python3 manage.py test
 					pip3 install --user django //or other requirements
 					python3 manage.py test
 `
-##   Docker //a container
+#   Docker //a container
+
+##	cmd
 `
-//cmd
 docker ps// show all dockers
 
 docker exec -it <docid> bash -l//getting inside the docker
 
 logout // get to the main machine
-
-Dockfile //the main file
+`
+#	Dockfile //the main file
 
 docker-compose.yml // a yaml file to compose two dockers
 
-//cmd
+##cmd
+`
 	docker-compose up
-
-//implimentation
+`
+##	implimentation
 	version: '3'
-	
+`	
 	services:
 		db: 
 			image: postgres

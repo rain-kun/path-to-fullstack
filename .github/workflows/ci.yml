@@ -6,6 +6,5 @@ jobs:
     run-on: ubuntu-latest
     steps:
       -uses: actions/checkout@v2
-      -run:
-          pip3 install --user django
-          python3 manage.py test
+      -run: pip3 install --user django
+      -run: python3 manage.py test

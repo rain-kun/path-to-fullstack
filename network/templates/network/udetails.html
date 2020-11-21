@@ -1,0 +1,66 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+<div class="container-sm">
+  <div id="UP" class="container-sm">
+    <div id="UPL">
+      <span class="border border-light">Username: <strong>{{u.username}}</strong></span><br>
+      <span class="border border-light">Email: <strong>{{u.email}}</strong></span>
+      {% if user.is_authenticated %}
+      {% if ufollow%}
+      <form class="unfollow" action="#" method="post">
+        {% csrf_token %}
+        <input id="unfollow" class="btn btn-light" type="submit" name="unfollow" value="unfollow">
+      </form>
+      {% else %}
+      <form class="follow" action="#}" method="post">
+        {% csrf_token %}
+        <input id="follow" class="btn btn-light" type="submit" name="follow" value="follow">
+      </form>
+      {% endif %}
+      {% endif %}
+    </div>
+    <div id="UPR">
+      <span>Following: {{fc.follower}}</span>
+      <span>Followers: {{fc.following}}</span>
+    </div>
+  </div>
+  <div class="container-sm bg-light" id="postsuser">
+    {%for post in page_obj%}
+    <div class="container post">
+      <h4><strong>{{post.title}}</strong></h4>
+      <a href="{% url 'user' post.user %}"><strong>by {{post.user}}</strong></a>
+      <div class="posttext">
+        {{post.text}}
+      </div>
+      <span>{{post.get_total_likes}} likes</span>
+      <form action="#" method="post">
+        <input type="submit" name="" value="H">
+      </form>
+      <br>
+      <span>{{post.created_on}}</span>
+
+    </div>
+    {% endfor %}
+  </div>
+  <div class="pagination bg-primary text-white" style="padding:.2rem;">
+    <span class="step-links">
+      {% if page_obj.has_previous %}
+      <a class="text-white" href="?page=1">&laquo; first</a>
+      <a class="text-white" href="?page={{ page_obj.previous_page_number }}">previous</a>
+      {% endif %}
+
+      <span class="current">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+      </span>
+
+      {% if page_obj.has_next %}
+      <a class="text-white" href="?page={{ page_obj.next_page_number }}">next</a>
+      <a class="text-white" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
+</div>
+
+{% endblock %}

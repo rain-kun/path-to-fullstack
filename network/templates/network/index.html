@@ -1,0 +1,62 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<div class="container-sm" id="formmain">
+  <form id="postform" class="bg-light text-black" action="{% url 'post' %}" method="post">
+    {% csrf_token %}
+    <div class="row">
+      <h3><strong>Title: </strong></h3>{{postform.title}}
+    </div>
+    <div class="row">
+      {{postform.text}}
+    </div>
+    <input class="btn btn-primary" type="submit" value="Post">
+  </form>
+  {{error}}
+</div>
+{% endif %}
+{% if user.is_authenticated %}
+<div class="container-sm bg-light" id="postsmain">
+  {%else%}
+  <div class="container-sm bg-light" id="postsmain1">
+    {%endif%}
+    {%for post in page_obj%}
+    <div class="container post">
+      <h4><strong>{{post.title}}</strong></h4>
+      <a href="{% url 'user' post.user %}"><strong>by {{post.user}}</strong></a>
+      <div class="posttext">
+        {{post.text}}
+      </div>
+      {% if post.get_total_likes %}
+      <span>{{post.get_total_likes}} likes</span>
+      {% else %}
+      <span>0 likes</span>
+      {% endif %}
+      <form action="#" method="post">
+        <input type="submit" name="" value="H">
+      </form>
+      <br>
+      <span>{{post.created_on}}</span>
+
+    </div>
+    {% endfor %}
+    <div class="pagination bg-primary text-white" style="padding:.2rem;">
+      <span class="step-links">
+        {% if page_obj.has_previous %}
+        <a class="text-white" href="?page=1">&laquo; first</a>
+        <a class="text-white" href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+          Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+        <a class="text-white" href="?page={{ page_obj.next_page_number }}">next</a>
+        <a class="text-white" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
+  </div>
+  {% endblock %}

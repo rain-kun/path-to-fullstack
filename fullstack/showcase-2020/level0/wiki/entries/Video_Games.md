@@ -1,0 +1,2 @@
+#video games
+A **video game** is an electronic game that involves interaction with a user interface or input device -- such as a joystick, controller, keyboard, or motion-sensing devices, to generate visual feedback for a player. This is then shown on a two- or three-dimensional video display device such as a TV set, monitor, touchscreen, or **virtual reality** headset. Video games are augmented with audio feedback from speakers or headphones, and optionally with other types of feedback systems including haptic technology.

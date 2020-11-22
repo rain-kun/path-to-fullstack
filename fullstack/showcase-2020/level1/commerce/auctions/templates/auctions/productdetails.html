@@ -1,0 +1,102 @@
+{% extends "auctions/layout.html" %}
+{% block title %}View Details{% endblock %}
+{% block body %}
+<h2>Product Details</h2>
+<div class="container-sm">
+  <h4>{{list.title}}</h4>
+  <div class="row">
+    <div class="col">
+      <div class="imgdiv">
+        <img src={{list.url}} height="300vh" alt="product image">
+      </div>
+      {% if list.status %}
+      <hr>
+      <div class="price">
+        <h6 class="price"><strong>Price: $</strong>{{list.price.price}}</h6>
+      </div>
+      <div class="current-bid-holder">
+        <h6>Current highest bid holder is <strong>{{list.price.author}}</strong></h6>
+        <h6>Total no of bids: {{total_bids}}</h6>
+      </div>
+      {% if user.is_authenticated %}
+      <form class="bid-form" action="{% url 'details' id=list.id %}" method="post">
+        {% if error %}
+        <h6 class="error">{{error}}</h6>
+        {% endif %}
+        {% csrf_token %}
+        {{form.bid}}
+        <input class="btn btn-sm btn-outline-dark" type="submit" name="bid-button" value="Place Bid">
+      </form>
+      {% endif %}
+      {% else %}
+      <hr>
+      <div id="result">
+        <h1>You rock <strong>{{list.price.author}}</strong>, <strong>{{list.title}}</strong> is now yours to keep!!.</h1>
+        <h3>You paid ${{list.price.price}}!!</h3>
+      </div>
+      <hr>
+      {% endif %}
+      <h5><strong>Discription:</strong></h5>
+      <p>{{list.discription}}</p>
+    </div>
+    <div class="col">
+      {% if user.is_authenticated %}
+      {% if watchlist is False %}
+      <form class="watchlist" action="{% url 'watchlist_handle' id=list.id %}" method="post">
+        {% csrf_token %}
+        <input id="watchlist" class="btn btn-dark" type="submit" name="addwatchlist" value="+watchlist">
+      </form>
+      {% else %}
+      <form class="watchlist" action="{% url 'watchlist_handle' id=list.id %}" method="post">
+        {% csrf_token %}
+        <input id="watchlist" class="btn btn-dark" type="submit" name="removewatchlist" value="-watchlist">
+      </form>
+      {% endif %}
+      {% endif %}
+      <div class="container-sm bg-dark text-white">
+        <h5><strong>Details:</strong></h5>
+        <h6>Listed by: <strong>{{list.author}}</strong></h6>
+        <h6 class="created_on">Created on {{list.created_on}}</h6>
+        <h6 class="categories">Categories: {{list.category}}</h6>
+        {% if list.status %}
+        <h6>status: Active</h6>
+        {% else %}
+        <h6>status: Inactive</h6>
+        {% endif %}
+        {% if currentuser %}
+        <form class="status-form" action="{% url 'savestatus' id=list.id %}" method="post">
+          {% csrf_token %}
+          {{form.status}}
+          <input class="btn btn-sm btn-outline-light" type="submit" name="bid-button" value="Save">
+        </form>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="container">
+    {% if user.is_authenticated %}
+    <div class="row">
+      <form class="col" action="{% url 'comments' id=list.id %}" method="post">
+        {% csrf_token %}
+        {{form.discription}}
+        <br>
+        <input class="btn btn-sm btn-outline-dark" type="submit" name="" value="comment">
+      </form>
+    </div>
+    {% endif %}
+    <hr>
+    <div class="row">
+      <div>
+        <h5><strong>Comments:</strong></h5>
+        {% for comment in comments %}
+        <ol class="comments">
+          <h6><strong>{{comment.name}}</strong> says:</h6>
+          <p>{{comment.body}}</p>
+        </ol>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

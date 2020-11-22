@@ -1,0 +1,114 @@
+body {
+  background-color: white;
+  padding: 10px;
+}
+
+body .nav-link {
+  color: black;
+}
+
+#watchlist {
+  text-align: center;
+}
+
+.comments {
+  text-align: center;
+}
+
+.comments p, .comments h6 {
+  text-align: center;
+}
+
+.container-sm {
+  padding: 20px;
+  margin-top: 4%;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px 0 #000000;
+}
+
+@media (min-width: 800px) {
+  .div-sm {
+    padding: 5px;
+    margin: 1vh 60vh 1vh 10vh;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 0 #e0ffff;
+    background-color: #000000;
+    text-align: center;
+    color: #e0ffff;
+  }
+
+  .div-sm:hover {
+    margin: 1vh 59vh 1vh 9vh;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 0 #000000;
+    background-color: #e0ffff;
+    text-align: 20vh;
+    color: black;
+  }
+}
+
+@media (max-width: 800px) {
+  .div-sm {
+    padding: 5px;
+    margin: 1vh .5vh 1vh .5vh;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 0 #e0ffff;
+    background-color: #000000;
+    text-align: center;
+    color: #e0ffff;
+  }
+
+  .div-sm:hover {
+    margin: 1vh 1vh 1vh 1vh;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 0 #000000;
+    background-color: #e0ffff;
+    text-align: 20vh;
+    color: black;
+    text-decoration: inherit;
+  }
+}
+
+.title_text {
+  color: white;
+}
+
+.imgx {
+  border-radius: 5px;
+  padding: 1px;
+}
+
+#result {
+  text-align: left;
+}
+
+#result h3, #result h1 {
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 2vh;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+/*# sourceMappingURL=styles.css.map */

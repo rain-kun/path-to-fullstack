@@ -1,0 +1,23 @@
+main, .border { padding: 0px; margin: 0px 0 0 0; }
+
+main { margin-top: 0%; font-size: 24px; }
+main h4 { padding: 40px 0 50px 0; font-size: 33px; color: #d93025; margin-left: 5%; }
+main #advance-search { padding: 0px 0 0 0; margin: 0% 0% 0 76.5%; width: 25%; height: 60px; font-size: 20px; }
+
+.col-6 { height: 50px; margin: 0 0% 0 0%; }
+
+header { background-color: rgba(0, 0, 0, 0.05); height: 100px; }
+header .navbar { font-size: 20px; height: 100px; }
+
+.col { font-size: 20px; color: rgba(0, 0, 0, 0.6); }
+.cap { font-size: 24px; }
+
+.nfo { font-family: monospace; }
+
+form { font-family: arial,sans-serif; font-size: 23px; margin: 0 3% 0  3%; }
+form .round-search { padding: 0 20px 0 20px; border-radius: 50px; margin: 0% 0% 0% 18%; border-style: solid; height: 60px; width: 60%; }
+form .round-search:hover { box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2); }
+form .search-submit { margin: 5% 2% 0 35%; border-radius: 5px; border-style: hidden; height: 50px; width: 15%; }
+form .search-submit:hover { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0.03); }
+
+.border { margin-top: -50px; margin-bottom: 60px; border: 1px; }

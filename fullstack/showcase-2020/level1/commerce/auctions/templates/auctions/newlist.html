@@ -1,0 +1,45 @@
+{% extends "auctions/layout.html" %}
+{% block title %}Create List{% endblock %}
+{% block body %}
+<h2>create new list</h2>
+<div class="container-sm">
+  <form class="clistf" action="{%url 'newlist'%}" method="post">
+    {% csrf_token %}
+    <ul>
+      <li class="row">
+        <h4>Title:{{form.title}}</h4>
+      </li>
+      <li class="row">
+        <h4>Image Url: {{form.img_url}}</h4>
+      </li>
+
+      <li class="row">
+        <h4>Starting Bid: {{form.bid}}</h4>
+      </li>
+      <li class="row">
+        <h4>Discription:</h4>
+        <h4>{{form.discription}}</h4>
+      </li>
+      <li class="row">
+        <h4>category:</h4>
+        <select class="clist" name="category_listing">
+          {% for tag in tags %}
+          <option name="value">{{tag}}</option>
+          {% endfor %}
+        </select>
+      </li>
+
+      <li class="row">
+        <h4>Status:{{form.status}}</h4>
+      </li>
+
+      <li class="row">
+        <input type="submit" name="" value="Add List">
+      </li>
+    </ul>
+  </form>
+  {% if errors %}
+  <p>{{errors}}</p>
+  {% endif %}
+</div>
+{% endblock %}

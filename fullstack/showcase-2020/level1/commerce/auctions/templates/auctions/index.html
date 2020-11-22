@@ -1,0 +1,31 @@
+{% extends "auctions/layout.html" %}
+{% block title %}Auction{% endblock %}
+{% block body %}
+<h2>Active Listings</h2>
+{% if lists %}
+{% for list in lists %}
+<div class="container-sm bg-dark text-white">
+  <h4><a class="title_text" href="{% url 'details' id=list.id %}">{{list.title}}</a></h4>
+  <div class="row" href="">
+    <div class="col">
+      <h4><a href="{% url 'details' id=list.id %}"><img class="imgx" src={{list.url}} height="300px" alt="product image"></a></h4>
+    </div>
+    <div class="col">
+      <h6 class="price"><strong>Current Price: $</strong>{{list.price.price}}</h6>
+      <br>
+      <h6 class="created_on">Created on {{list.created_on}}</h6>
+      <br>
+      <h6 class="categories">Categories: {{list.category}}</h6>
+      <hr>
+      <p>{{list.discription}}</p>
+    </div>
+  </div>
+
+</div>
+{% endfor %}
+{% else %}
+No active listing?!!,
+<br>
+I think nobody is using this site anymore ;_;
+{% endif %}
+{% endblock %}

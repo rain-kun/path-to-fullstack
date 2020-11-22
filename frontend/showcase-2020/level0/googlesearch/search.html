@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <link rel="icon" href="./img/google-logo.ico" />
+      <meta charset="utf-8">
+      <meta name="description" content="Free Web tutorials">
+      <meta name="keywords" content="HTML, CSS, bootstrap">
+      <meta name="author" content="rain">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Search</title>
+      <link rel="stylesheet" type="text/css" href="search.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <header>
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="">
+              <img src="img/googlelogo.png" height="" width="150" class="d-inline-block align-top" alt="googlelogo">
+              </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.html">Google search<span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        </header>
+        <main id="main">
+          <div>
+            <h4>Advanced Search</h4>
+          </div>
+          <br>
+          <div class="border">
+
+          </div>
+          <form action="https://google.com/search">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-2">
+                  <h3>Find pages with...</h3>
+                </div>
+                <div class="col-6">
+
+                </div>
+                <div class="col">
+                  <strong class="cap">To do this in the search box.</strong>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-2">
+                  <label for="as_q">all these words:</label>
+                </div>
+                <input type="text" class="col-6" id="as_q" name="as_q">
+                <div class="col">
+                  <div >Type the important words: <span class="nfo">tri-colour rat terrier</span></div>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-2">
+                  <label for="as_epq">this exact word or phrase:</label>
+                </div>
+                <input class="col-6" type="text"  id="as_epq" name="as_epq">
+
+                <div class="col">
+                  <div >Put exact words in quotes: <span class="nfo">"rat terrier"</span></div>
+                </div>
+
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-2">
+                  <label for="as_oq">any of these words:</label>
+                </div>
+
+                <input class="col-6" type="text" id="as_oq" name="as_oq">
+                <div class="col">
+                  <div >Type OR between all the words you want: <span class="nfo">miniature OR standard</span></div>
+                </div>
+
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-2">
+                  <label class="" for="as_eq">none of these words:</label>
+
+                </div>
+                <input class="col-6" type="text" id="as_eq" name="as_eq">
+                <div class="col">
+                  <div >Put a minus sign just before words that you don't want:</div>
+                  <div ><span class="nfo">-rodent, -"Jack Russell"</span></div>
+                </div>
+
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-6">
+                  <button type="submit" id="advance-search" class="btn btn-primary" value="Advanced Search"><strong>Advance Search</strong></button>
+                </div>
+                <div class="col">
+                </div>
+              </div>
+            </div>
+          </form>
+        </main>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</html>

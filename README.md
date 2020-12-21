@@ -1,4 +1,4 @@
-# path-to-fullstack
+0# path-to-fullstack
 Want to be a fullstack webdeveloper? here,have a way to do so!
 
 
@@ -400,10 +400,10 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
- SECURE_HSTS_SECONDS = 15768090   set low, but when site is ready for deployment, set to at least 15768000 (6 months)
- SECURE_HSTS_INCLUDE_SUBDOMAINS = True
- SECURE_HSTS_PRELOAD = True
-
+SECURE_HSTS_SECONDS = 15768090   set low, but when site is ready for deployment, set to at least 15768000 (6 months)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_BROWSER_XSS_FILTER = True
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="/__/firebase/8.0.2/firebase-app.js"></script>

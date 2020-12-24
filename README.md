@@ -295,6 +295,12 @@ making a variable task = request.session["tasks"]
 -NOT NULL
 
 
+## generating a security key
+
+```sh
+$ python manage.py shell -c 'from django.core.management import utils; print(utils.get_random_secret_key())'
+```
+
 ##  django sql
 ```py
 models.objects.all()
